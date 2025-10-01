@@ -1,10 +1,10 @@
 # OSINT-Driven Adversarial Attacks on Misconfigured ML Systems
 
-⚠️ **WARNING: FOR EDUCATIONAL AND DEFENSIVE SECURITY PURPOSES ONLY**
+ **WARNING: FOR EDUCATIONAL AND DEFENSIVE SECURITY PURPOSES ONLY**
 
 This project demonstrates how Open Source Intelligence (OSINT) techniques can be used to discover and exploit misconfigured machine learning systems, and how to defend against such attacks.
 
-## 🎯 Purpose
+##  Purpose
 
 This demonstration is designed for:
 - **Educational purposes** in security research and ML security courses
@@ -14,29 +14,29 @@ This demonstration is designed for:
 
 **DO NOT** use this for unauthorized access, malicious attacks, or any illegal activities.
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ml_osint_security/
-├── vulnerable_system/     # Intentionally vulnerable ML system
-│   ├── model_trainer.py   # Train MNIST classifier with misconfigurations
-│   └── api_server.py      # Flask API with security vulnerabilities
-├── osint_discovery/       # OSINT reconnaissance tools
-│   └── scanner.py         # Directory scanner, config checker, fingerprinting
-├── attacks/               # Attack modules
-│   ├── data_poisoning.py  # Label flipping, backdoor injection
-│   ├── model_extraction.py # Query-based model stealing
-│   └── adversarial_evasion.py # FGSM adversarial examples
-├── defenses/              # Defense framework
-│   └── defense_framework.py # Access control, input validation, anomaly detection
-├── metrics/               # Metrics and visualization
-│   └── metrics_collector.py # Collect metrics, generate visualizations
-├── data/                  # Data storage (simulated misconfigurations)
-├── models/                # Model storage (simulated exposed models)
-└── main.py               # Main orchestration script
+ vulnerable_system/     # Intentionally vulnerable ML system
+    model_trainer.py   # Train MNIST classifier with misconfigurations
+    api_server.py      # Flask API with security vulnerabilities
+ osint_discovery/       # OSINT reconnaissance tools
+    scanner.py         # Directory scanner, config checker, fingerprinting
+ attacks/               # Attack modules
+    data_poisoning.py  # Label flipping, backdoor injection
+    model_extraction.py # Query-based model stealing
+    adversarial_evasion.py # FGSM adversarial examples
+ defenses/              # Defense framework
+    defense_framework.py # Access control, input validation, anomaly detection
+ metrics/               # Metrics and visualization
+    metrics_collector.py # Collect metrics, generate visualizations
+ data/                  # Data storage (simulated misconfigurations)
+ models/                # Model storage (simulated exposed models)
+ main.py               # Main orchestration script
 ```
 
-## 🔧 Installation
+##  Installation
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -62,7 +62,7 @@ ml_osint_security/
    pip install -r requirements.txt
    ```
 
-## 🚀 Usage
+##  Usage
 
 ### Quick Start: Full Demonstration
 
@@ -93,13 +93,13 @@ python main.py --full --with-api-attacks
 **Expected runtime:** ~90-120 seconds
 
 This will:
-1. ✅ Set up a vulnerable ML system (MNIST classifier)
-2. 🔍 Perform OSINT discovery of exposed resources
-3. ☠️ Execute data poisoning attack (25% poison rate)
-4. 🎯 **Execute model extraction attack** (1000 API queries)
-5. 🎭 Generate adversarial examples (FGSM)
-6. 🛡️ Demonstrate defense framework
-7. 📊 Collect metrics and generate visualizations
+1.  Set up a vulnerable ML system (MNIST classifier)
+2.  Perform OSINT discovery of exposed resources
+3.  Execute data poisoning attack (25% poison rate)
+4.  **Execute model extraction attack** (1000 API queries)
+5.  Generate adversarial examples (FGSM)
+6.  Demonstrate defense framework
+7.  Collect metrics and generate visualizations
 
 ### Run Individual Steps
 
@@ -156,18 +156,18 @@ python defenses/defense_framework.py
 python metrics/metrics_collector.py
 ```
 
-## 📋 Components Overview
+##  Components Overview
 
 ### 1. Vulnerable ML System
 
 **Intentional Vulnerabilities:**
-- ❌ Training data stored in world-readable directory
-- ❌ Model weights saved without access control
-- ❌ Configuration files expose metadata
-- ❌ No integrity checks on model files
-- ❌ API has no authentication
-- ❌ No rate limiting
-- ❌ Verbose error messages
+-  Training data stored in world-readable directory
+-  Model weights saved without access control
+-  Configuration files expose metadata
+-  No integrity checks on model files
+-  API has no authentication
+-  No rate limiting
+-  Verbose error messages
 
 **Files:**
 - `vulnerable_system/model_trainer.py` - Creates misconfigured ML system
@@ -176,11 +176,11 @@ python metrics/metrics_collector.py
 ### 2. OSINT Discovery Module
 
 **Capabilities:**
-- 🔍 Directory scanning for exposed files
-- 🔍 Storage misconfiguration detection
-- 🔍 ML model fingerprinting (framework, architecture)
-- 🔍 API vulnerability probing
-- 📄 Comprehensive security report generation
+-  Directory scanning for exposed files
+-  Storage misconfiguration detection
+-  ML model fingerprinting (framework, architecture)
+-  API vulnerability probing
+-  Comprehensive security report generation
 
 **File:** `osint_discovery/scanner.py`
 
@@ -210,22 +210,22 @@ python metrics/metrics_collector.py
 ### 4. Defense Framework
 
 **Security Controls:**
-- 🛡️ **Access Control:** Authentication and authorization
-- 🛡️ **Input Validation:** Detect anomalous/adversarial inputs
-- 🛡️ **Rate Limiting:** Prevent rapid model extraction
-- 🛡️ **Anomaly Detection:** Identify suspicious query patterns
-- 🛡️ **Model Integrity:** Version control and hash verification
+-  **Access Control:** Authentication and authorization
+-  **Input Validation:** Detect anomalous/adversarial inputs
+-  **Rate Limiting:** Prevent rapid model extraction
+-  **Anomaly Detection:** Identify suspicious query patterns
+-  **Model Integrity:** Version control and hash verification
 
 **File:** `defenses/defense_framework.py`
 
 ### 5. Metrics & Visualization
 
 **Collected Metrics:**
-- ⏱️ Time to discovery
-- 📈 Attack success rates
-- 📉 Model accuracy degradation
-- 🛡️ Defense effectiveness
-- 📊 OSINT advantage quantification
+-  Time to discovery
+-  Attack success rates
+-  Model accuracy degradation
+-  Defense effectiveness
+-  OSINT advantage quantification
 
 **Visualizations:**
 - OSINT discovery results
@@ -236,24 +236,24 @@ python metrics/metrics_collector.py
 
 **File:** `metrics/metrics_collector.py`
 
-## 📊 Example Results
+##  Example Results
 
 After running the full demonstration, you'll find:
 
 ```
 metrics/results/
-├── osint_discovery.png           # Exposed resources visualization
-├── attack_success_rates.png       # Attack effectiveness
-├── model_accuracy_comparison.png  # Clean vs poisoned vs surrogate
-├── defense_effectiveness.png      # Defense layer analysis
-├── osint_advantage.png            # OSINT impact visualization
-├── summary_report.txt             # Comprehensive text report
-└── all_metrics.json               # Complete metrics data
+ osint_discovery.png           # Exposed resources visualization
+ attack_success_rates.png       # Attack effectiveness
+ model_accuracy_comparison.png  # Clean vs poisoned vs surrogate
+ defense_effectiveness.png      # Defense layer analysis
+ osint_advantage.png            # OSINT impact visualization
+ summary_report.txt             # Comprehensive text report
+ all_metrics.json               # Complete metrics data
 ```
 
-## 🔒 Security Best Practices Demonstrated
+##  Security Best Practices Demonstrated
 
-### ❌ Vulnerabilities Shown
+###  Vulnerabilities Shown
 1. Exposed training data and models
 2. No access controls on ML resources
 3. Information disclosure via API endpoints
@@ -261,7 +261,7 @@ metrics/results/
 5. Lack of input validation
 6. No integrity verification
 
-### ✅ Defenses Implemented
+###  Defenses Implemented
 1. **Access Control:** Role-based permissions
 2. **Authentication:** Token-based auth system
 3. **Input Validation:** Statistical anomaly detection
@@ -270,7 +270,7 @@ metrics/results/
 6. **Model Versioning:** Integrity verification via hashing
 7. **Monitoring:** Comprehensive logging and alerting
 
-## 📖 Educational Use Cases
+##  Educational Use Cases
 
 ### For Students
 - Understand ML security vulnerabilities
@@ -290,7 +290,7 @@ metrics/results/
 - Train security awareness
 - Conduct penetration testing (authorized)
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 After completing this demonstration, you will understand:
 
@@ -314,7 +314,7 @@ After completing this demonstration, you will understand:
    - Quantifying security improvements
    - Risk analysis
 
-## ⚠️ Ethical Considerations
+##  Ethical Considerations
 
 ### Legal Compliance
 - Only test systems you own or have written permission to test
@@ -332,7 +332,7 @@ After completing this demonstration, you will understand:
 - Cite sources appropriately
 - Do not plagiarize or misrepresent work
 
-## 🤝 Contributing
+##  Contributing
 
 This is an educational project. If you find issues or have improvements:
 
@@ -341,11 +341,11 @@ This is an educational project. If you find issues or have improvements:
 3. Test thoroughly
 4. Submit with clear explanation
 
-## 📚 References
+##  References
 
 ### Papers & Research
 - Goodfellow et al. (2014) - "Explaining and Harnessing Adversarial Examples"
-- Tramèr et al. (2016) - "Stealing Machine Learning Models via Prediction APIs"
+- Tram�r et al. (2016) - "Stealing Machine Learning Models via Prediction APIs"
 - Biggio & Roli (2018) - "Wild Patterns: Ten Years After the Rise of Adversarial ML"
 - Papernot et al. (2017) - "Practical Black-Box Attacks against Machine Learning"
 
@@ -360,11 +360,11 @@ This is an educational project. If you find issues or have improvements:
 - NIST AI Risk Management Framework
 - MITRE ATLAS (Adversarial Threat Landscape for AI Systems)
 
-## 📝 License
+##  License
 
 This project is provided for educational purposes. Use responsibly and ethically.
 
-## 🆘 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -388,7 +388,7 @@ For issues specific to this demonstration:
 3. Ensure all dependencies are installed
 4. Verify Python version compatibility
 
-## 🏁 Conclusion
+##  Conclusion
 
 This demonstration shows how seemingly small misconfigurations can be discovered via OSINT and exploited to compromise ML systems. The key takeaways:
 
@@ -402,4 +402,4 @@ This demonstration shows how seemingly small misconfigurations can be discovered
 
 ---
 
-**⚠️ Final Warning:** This tool is for authorized security testing and education ONLY. Unauthorized use is illegal and unethical. Always obtain proper permission before testing any system you do not own.
+** Final Warning:** This tool is for authorized security testing and education ONLY. Unauthorized use is illegal and unethical. Always obtain proper permission before testing any system you do not own.

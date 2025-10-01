@@ -10,7 +10,7 @@ I've added a new flag `--with-api-attacks` to explicitly enable API-based attack
 
 ---
 
-## 🚀 How to Run Model Extraction Attack
+##  How to Run Model Extraction Attack
 
 ### Method 1: Run Just Model Extraction (Recommended)
 
@@ -34,12 +34,12 @@ python3 main.py --step 4 --with-api-attacks
 ```
 
 This will:
-1. ✅ Gather OSINT metadata from exposed configs
-2. ✅ Generate 1000 query samples
-3. ✅ Query the API to get predictions
-4. ✅ Train surrogate model on query results
-5. ✅ Compare surrogate accuracy with original model
-6. ✅ Save surrogate model and metrics
+1.  Gather OSINT metadata from exposed configs
+2.  Generate 1000 query samples
+3.  Query the API to get predictions
+4.  Train surrogate model on query results
+5.  Compare surrogate accuracy with original model
+6.  Save surrogate model and metrics
 
 **Expected Runtime:** ~60-90 seconds
 
@@ -65,7 +65,7 @@ This runs all 7 steps INCLUDING model extraction.
 
 ---
 
-## 📊 Expected Results
+##  Expected Results
 
 ### With OSINT Intelligence
 
@@ -83,7 +83,7 @@ STEP 4: MODEL EXTRACTION ATTACK
   Generated 1000 query samples using 'diverse' strategy
 
 [4.3] Querying target model...
-Querying API: 100%|████████████████████| 32/32 [00:28<00:00,  1.13it/s]
+Querying API: 100%|| 32/32 [00:28<00:00,  1.13it/s]
   Completed 1000 queries successfully
 
 [4.4] Training surrogate model...
@@ -100,7 +100,7 @@ Epoch 5/5: loss: 0.2634, accuracy: 0.9423
   Model agreement: 0.9567
   Accuracy gap: 0.0633
 
-✓ Model extraction attack complete!
+ Model extraction attack complete!
 ```
 
 ### Key Metrics Explained
@@ -133,7 +133,7 @@ The attack uses OSINT-discovered metadata to optimize extraction:
 
 ---
 
-## 🔍 Verify API Server is Running
+##  Verify API Server is Running
 
 Before running the attack, verify the server is accessible:
 
@@ -154,7 +154,7 @@ If these work, the server is ready for extraction attack!
 
 ---
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Issue 1: "Connection refused" error
 
@@ -174,17 +174,17 @@ ERROR: Could not query API - Connection refused
 
 **Symptom:**
 ```
-⚠️  Skipping model extraction (requires running API server)
+  Skipping model extraction (requires running API server)
 ```
 
 **Solution:**
 Make sure you're using the `--with-api-attacks` flag:
 
 ```bash
-# ❌ Wrong (skips extraction)
+#  Wrong (skips extraction)
 python3 main.py --full
 
-# ✅ Correct (includes extraction)
+#  Correct (includes extraction)
 python3 main.py --full --with-api-attacks
 ```
 
@@ -222,17 +222,17 @@ query_samples = extractor.generate_query_samples(num_samples=500)
 
 ---
 
-## 📁 Output Files
+##  Output Files
 
 After successful model extraction, you'll find:
 
 ```
 ml_osint_security/
-├── models/exposed/
-│   ├── surrogate_model.keras           ← Stolen model
-│   └── surrogate_model_metadata.json   ← Extraction details
-└── attacks/
-    └── query_log.json                  ← First 100 queries logged
+ models/exposed/
+    surrogate_model.keras            Stolen model
+    surrogate_model_metadata.json    Extraction details
+ attacks/
+     query_log.json                   First 100 queries logged
 ```
 
 ### Inspect the Stolen Model
@@ -255,7 +255,7 @@ print(predictions)
 
 ---
 
-## 🎯 Attack Effectiveness Comparison
+##  Attack Effectiveness Comparison
 
 | Scenario | Queries Needed | Surrogate Accuracy | Time Required |
 |----------|---------------|-------------------|---------------|
@@ -268,7 +268,7 @@ print(predictions)
 
 ---
 
-## 🎓 Educational Insights
+##  Educational Insights
 
 ### What This Demonstrates
 
@@ -278,9 +278,9 @@ print(predictions)
    - Increases attack success rate
 
 2. **API Exposure = Model Exposure**
-   - Unlimited queries → complete model theft
-   - No authentication → anyone can extract
-   - No rate limiting → extraction in minutes
+   - Unlimited queries  complete model theft
+   - No authentication  anyone can extract
+   - No rate limiting  extraction in minutes
 
 3. **Surrogate Models are Dangerous**
    - 92-95% accuracy is "good enough" for many attacks
@@ -301,7 +301,7 @@ print(predictions)
 
 ---
 
-## 🔐 Defense Testing
+##  Defense Testing
 
 After successful extraction, you can test defenses:
 
@@ -322,7 +322,7 @@ Run the defense framework, then try extraction - you'll see rate limiting in act
 
 ---
 
-## ✅ Summary
+##  Summary
 
 **To run model extraction with API server:**
 
@@ -337,10 +337,10 @@ python3 main.py --step 4 --with-api-attacks
 ```
 
 **Key changes made:**
-- ✅ Added `--with-api-attacks` flag for clarity
-- ✅ Updated help text with examples
-- ✅ Changed default behavior (safer - skips by default)
-- ✅ Requires explicit opt-in to run API attacks
+-  Added `--with-api-attacks` flag for clarity
+-  Updated help text with examples
+-  Changed default behavior (safer - skips by default)
+-  Requires explicit opt-in to run API attacks
 
 **Expected results:**
 - 1000 queries executed
@@ -348,4 +348,4 @@ python3 main.py --step 4 --with-api-attacks
 - Model agreement rate: ~95-97%
 - Total time: ~60-90 seconds
 
-Now you can see the complete attack chain with model extraction! 🎯
+Now you can see the complete attack chain with model extraction! 

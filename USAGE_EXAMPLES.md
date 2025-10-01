@@ -41,23 +41,23 @@ python main.py --step 1
 **What happens:**
 - Downloads MNIST dataset (60K training images)
 - Trains a CNN classifier (~98% accuracy)
-- Saves model to `models/exposed/` (❌ no access control)
-- Saves training data to `data/misconfigured/` (❌ world-readable)
-- Creates config files with metadata (❌ exposes architecture)
+- Saves model to `models/exposed/` ( no access control)
+- Saves training data to `data/misconfigured/` ( world-readable)
+- Creates config files with metadata ( exposes architecture)
 
 **Files created:**
 ```
 models/exposed/
-├── model_v1.0.keras
-├── weights_v1.0.h5
-└── model_config_v1.0.json
+ model_v1.0.keras
+ weights_v1.0.h5
+ model_config_v1.0.json
 
 data/misconfigured/
-├── x_train.npy
-├── y_train.npy
-├── x_test.npy
-├── y_test.npy
-└── metadata.json
+ x_train.npy
+ y_train.npy
+ x_test.npy
+ y_test.npy
+ metadata.json
 ```
 
 #### Step 2: OSINT Discovery
@@ -113,7 +113,7 @@ python main.py --step 5  # Skip extraction for now
 
 **What happens:**
 - Uses OSINT-discovered model path
-- Generates adversarial examples with FGSM (ε=0.15)
+- Generates adversarial examples with FGSM (�=0.15)
 - Tests evasion success rate
 - Measures perturbation magnitude
 
@@ -141,11 +141,11 @@ python main.py --step 6
 
 **Example output:**
 ```
-Admin accessing /info: ✓ Allowed
-User accessing /info: ✗ Denied
-Valid input: ✓ Accepted
-Invalid shape: ✗ Rejected - Invalid shape: expected (28, 28, 1), got (32, 32, 1)
-Query 51+ (rate limit): ✗ Blocked - Rate limit exceeded: 50 queries per 60s
+Admin accessing /info:  Allowed
+User accessing /info:  Denied
+Valid input:  Accepted
+Invalid shape:  Rejected - Invalid shape: expected (28, 28, 1), got (32, 32, 1)
+Query 51+ (rate limit):  Blocked - Rate limit exceeded: 50 queries per 60s
 ```
 
 **Key insight:** Multi-layered defenses catch attacks at different stages!
@@ -164,13 +164,13 @@ python main.py --step 7
 **Output files:**
 ```
 metrics/results/
-├── osint_discovery.png
-├── attack_success_rates.png
-├── model_accuracy_comparison.png
-├── defense_effectiveness.png
-├── osint_advantage.png
-├── summary_report.txt
-└── all_metrics.json
+ osint_discovery.png
+ attack_success_rates.png
+ model_accuracy_comparison.png
+ defense_effectiveness.png
+ osint_advantage.png
+ summary_report.txt
+ all_metrics.json
 ```
 
 ---
@@ -192,7 +192,7 @@ python vulnerable_system/api_server.py
 **Output:**
 ```
 VULNERABLE ML API SERVER
-⚠️  WARNING: This is an intentionally vulnerable API
+  WARNING: This is an intentionally vulnerable API
 Starting server on 127.0.0.1:5000
 ```
 
@@ -399,7 +399,7 @@ for token, name in [(admin_token, 'Admin'),
     print(f"\n{name} access:")
     for resource in resources:
         allowed, _ = framework.access_control.verify_access(token, resource)
-        status = "✓" if allowed else "✗"
+        status = "" if allowed else ""
         print(f"  {resource}: {status}")
 ```
 
