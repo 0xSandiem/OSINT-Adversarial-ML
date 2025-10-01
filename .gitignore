@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data files (generated during runtime)
+data/misconfigured/*.npy
+data/misconfigured/*.json
+data/misconfigured/*.npz
+
+# Model files (generated during runtime)
+models/exposed/*.keras
+models/exposed/*.h5
+models/exposed/*.json
+models/secure/*.keras
+models/secure/*.json
+
+# Attack outputs
+attacks/*.json
+attacks/adversarial_examples/
+attacks/query_log.json
+
+# Metrics and results
+metrics/results/*.png
+metrics/results/*.json
+metrics/results/*.txt
+
+# Logs
+*.log
+logs/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Reports
+osint_discovery_report.json
